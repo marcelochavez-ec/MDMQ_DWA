@@ -1,5 +1,5 @@
 # MDMQ_DWA
-Proceso de tipo ETL desarrollados en **R** para la construcción del Data Warehouse Analítico de la Secretaría de Desarrollo Económico y Productivo del Municipio del Distrito Metropolitano de Quito
+Proceso de tipo **ETL** _*(Extract, Transform, Load)*_ desarrollados en **R** para la construcción del Data Warehouse Analítico de la Secretaría de Desarrollo Económico y Productivo del Municipio del Distrito Metropolitano de Quito
 
 - **Developer:** Mgs. Marcelo Chávez
 - **Fecha de creación de repositorio de versionamiento:** 25 de junio de 2024
