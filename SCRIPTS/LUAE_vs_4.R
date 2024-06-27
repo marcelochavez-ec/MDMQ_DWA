@@ -88,52 +88,20 @@ write.xlsx(r_exploratorio_luae, "D:/MDMQ/BDD/LUAE/r_exploratorio_luae.xlsx",
 
 # REPORTE NÚMERO DE LICENCIAS POR AÑO -------------------------------------
 
-# Criterio: Marcelo Chávez
-
-reporte_anual_1 <- db_luae %>%
-    
-    # Reglas de cálculo del Indicador por Año:
-    
-    # Este no sería un error dado que solo es un estado del BPM y pueden existir 
-    # flujos con error y sin embargo, la LUAE fue otorgada.
-    
-    filter(
-        # ESTADO_BPM %in% c("EJECUCION",
-        #                   "FINALIZADO") &
-        # La siguinte regla si interesa dado que el ESTADO_BPM no se debe considerar:
-        #  
-        !estado_emision %in% c("CADUCADA",
-                               "NEGADA",
-                               "REVOCADA")) %>%
-    select(numero_licencia,
-           # CODIGO_CIIU,
-           # ESTADO_EMISION,
-           # ESTADO_BPM,
-           anio_otorgamiento) %>% 
-    
-    distinct() %>% 
-    
-    group_by(anio_otorgamiento) %>%
-    
-    summarize(total_licencias = n())
-
-# Criterio: Oscar Romero
-
-reporte_anual_2 <- db_luae %>%
+reporte_anual <- db_luae %>%
     
     # Este criterio no creo q sea necesario:
     
-    mutate(id_anio=paste0(anio_otorgamiento,
-                          "_",
-                          numero_licencia)) %>% 
+    # mutate(id_anio=paste0(anio_otorgamiento,
+    #                       "_",
+    #                       numero_licencia)) %>% 
     
-    filter(estado_emision == "OTORGADA" &
-          (estado_bpm == "EJECUCION" | estado_bpm == "FINALIZADO")) %>% 
+    filter(estado_emision %in% c("OTORGADA",
+                                 "OTORGADA_PARCIAL") &
+          (!estado_bpm %in% c("ABORTADO",
+                              "FINALIZADO CON ERROR"))) %>% 
     
-    select(
-           # id_anio,
-           numero_licencia,
-           # movimiento_actual, # Este criterio está mal
+    select(numero_tramite,
            anio_otorgamiento) %>% 
     
     distinct() %>% 
@@ -142,24 +110,23 @@ reporte_anual_2 <- db_luae %>%
     
     summarize(total_licencias = n())
 
-reporte_anual_2
+reporte_anual
 
 
 # REPORTE ACUMULADO MENSUAL -----------------------------------------------
 
-acumulada <- db_luae %>%
+reporte_acumulado <- db_luae %>%
     
-    # Reglas de cálculo del Indicador Acumulado de Enero a Mayo de cada año:  
+    # Reglas de cálculo del Indicador Acumulado según los meses que se consideren:  
     
-    filter(estado_emision == "OTORGADA" &
-          (estado_bpm %in% c("EJECUCION","FINALIZADO")) &
-           lubridate::month(fecha_otorgamiento) %in% 1:5) %>%
+  filter(estado_emision %in% c("OTORGADA",
+                               "OTORGADA_PARCIAL") &
+        !estado_bpm %in% c("ABORTADO",
+                            "FINALIZADO CON ERROR") &
+         lubridate::month(fecha_otorgamiento) %in% 1:5) %>%
     
-    select(
-        # id_anio,
-        numero_licencia,
-        # movimiento_actual, # Este criterio está mal
-        anio_otorgamiento) %>% 
+    select(numero_tramite,
+           anio_otorgamiento) %>% 
     
     distinct() %>% 
     
@@ -167,7 +134,7 @@ acumulada <- db_luae %>%
     
     summarize(total_licencias_acumuladas = n())
 
-acumulada
+reporte_acumulado
 
 # FRECUENCIAS: ---------------------------------------------------------
 
