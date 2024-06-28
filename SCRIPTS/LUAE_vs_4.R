@@ -5,7 +5,7 @@ library(openxlsx)
 library(RPostgreSQL)
 library(skimr)
 
-source("D:/MDMQ/SCRIPTS/exploratorio.R")
+source("SCRIPTS/exploratorio.R")
 
 con_postgres <- dbConnect(RPostgres::Postgres(),
                           dbname = "sidep",
@@ -76,11 +76,11 @@ read_and_stack_excel <- function(directory_path) {
 }
 
 # Usar la función para leer y apilar los archivos Excel
-db_luae <- read_and_stack_excel("D:/MDMQ/BDD/LUAE/")
+db_luae <- read_and_stack_excel("DB/LUAE/")
 
 r_exploratorio_luae <- exploratorio(db_luae)
 
-write.xlsx(r_exploratorio_luae, "D:/MDMQ/BDD/LUAE/r_exploratorio_luae.xlsx",
+write.xlsx(r_exploratorio_luae, "DB/LUAE/r_exploratorio_luae.xlsx",
            sheetName="METADATO_LUAE")
 
 # Verificar el resultado
