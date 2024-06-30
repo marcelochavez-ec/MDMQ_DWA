@@ -11,9 +11,9 @@ Código de tipo **ETL** _*(Extract, Transform, Load)*_ desarrollados en **R** pa
 
 ## Documentación de Soporte y Uso de herramientas digitales - README.md
 
-Esta es una plantilla basada en los estándares de la Guía de publicación de herramientas digitales del BID. Sabemos que no existe un solo estándar para la documentación de soporte y uso de herramientas digitales, pero hemos recopilado estas características importantes que debe tener un readme.md para facilitar el uso y amplificar el potencial de impacto de las mismas. Cualquier comentario o recomendación les pedimos generar un issue de consulta o escribir directamente a code@iadb.org.
+Esta es una plantilla basada en los estándares de la Guía de publicación de herramientas digitales del BID. Sabemos que no existe un solo estándar para la documentación de soporte y uso de herramientas digitales, pero hemos recopilado estas características más importantes que debe tener un readme.md.
 
-*Esta herramienta digital forma parte del catálogo de herramientas del **Banco Interamericano de Desarrollo**. Puedes conocer más sobre la iniciativa del BID en [code.iadb.org](https://code.iadb.org)*
+*Esta herramienta digital forma parte del portafolio de servicios profesionales del Consultor. Puedes contactarte vía e-mail a: [marcelo_chavez_ec@outlook.com]*
 
 ## Tabla de contenidos:
 
