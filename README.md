@@ -11,7 +11,7 @@ Código de tipo **ETL** _*(Extract, Transform, Load)*_ desarrollados en **R** pa
 
 ## Documentación de Soporte y Uso de herramientas digitales - README.md
 
-Esta es una plantilla basada en los estándares de la Guía de publicación de herramientas digitales del BID. Sabemos que no existe un solo estándar para la documentación de soporte y uso de herramientas digitales, pero hemos recopilado estas características más importantes que debe tener un READMEe.md
+Esta es una plantilla basada en los estándares de la Guía de publicación de herramientas digitales del BID. Sabemos que no existe un solo estándar para la documentación de soporte y uso de herramientas digitales, pero hemos recopilado estas características más importantes que debe tener un README.md
 
 *Esta herramienta digital forma parte del portafolio de servicios profesionales del Consultor. Puedes contactarte vía e-mail a: [marcelo_chavez_ec@outlook.com]*
 
