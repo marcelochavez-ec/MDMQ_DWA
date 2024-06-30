@@ -1,6 +1,6 @@
 <h1 align="center">Servicios Profesionales para la Secretaría de Desarrollo Económico y Productivo del MDMQ</h1>
 <h2 align="center">Data Warehouse Analítico con <strong>R</strong></h2>
-<p align="center"><IMG src="IMG/LOGO_SECRETARIA.png"/></p> 
+<p align="center"><IMG src="IMG_github/LOGO_SECRETARIA.png"/></p> 
 
 Código de tipo **ETL** _*(Extract, Transform, Load)*_ desarrollados en **R** para la construcción del Data Warehouse Analítico de la Secretaría de Desarrollo Económico y Productivo del Municipio del Distrito Metropolitano de Quito.
 
