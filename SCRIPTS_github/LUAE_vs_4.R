@@ -87,17 +87,15 @@ db_luae <- db_luae %>%
     TRUE ~ NA_character_  # Maneja otros casos, si existen
   ))
 
-<<<<<<< HEAD
 write_parquet(db_luae, "DB/LUAE/db_luae.parquet")
 
 # r_exploratorio_luae <- exploratorio(db_luae)
 # 
 # write.xlsx(r_exploratorio_luae, "DB/LUAE/r_exploratorio_luae.xlsx",
 #            sheetName="METADATO_LUAE")
-=======
+
 write.xlsx(r_exploratorio_luae, "DB/LUAE/r_exploratorio_luae.xlsx",
            sheetName="METADATO_LUAE")
->>>>>>> 063b99822a099cdae0d2d42c3531a6b633d54d2a
 
 # Verificar el resultado
 # str(db_luae)
