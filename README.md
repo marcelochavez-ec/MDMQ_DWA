@@ -7,6 +7,7 @@ Código de tipo **ETL** _*(Extract, Transform, Load)*_ desarrollados en **R** pa
 - **Developer:** Mgs. Marcelo Chávez
 - **Fecha de creación de repositorio de versionamiento:** 25 de junio de 2024
 - **Copyright 2024:** Derechos Reservados por el autor
+<<<<<<< HEAD
 - **Disclaimer:** Se prohíbe la reproducción total, parcial o plagio de cualquier elemento o bloque de código publicado en este repositorio digital
 
 ## Documentación de Soporte y Uso de herramientas digitales - README.md
@@ -54,3 +55,6 @@ Para usar esta herramienta digital, sigue los siguientes pasos:
    ```
 **Disclaimer:** Se prohibe la reproducción total o parcial de cualquier elemento o bloque de código publicado en este repositorio
 
+=======
+- **Disclaimer:** Se prohibe la reproducción total o parcial de cualquier elemento o bloque de código publicado en este repositorio
+>>>>>>> 063b99822a099cdae0d2d42c3531a6b633d54d2a
