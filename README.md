@@ -1,4 +1,4 @@
-<h1 align="center">Servicios Profesionales para Municipio del Distrito Metropolitano de Quito | Secretaría de Desarrollo Económico y Productivo</h1>
+<h1 align="center">Servicios Profesionales para la Secretaría de Desarrollo Económico y Productivo del MDMQ</h1>
 ## Data Warehouse Analítico con **R**
 <p align="center"><IMG src="IMG/LOGO_SECRETARIA.png"/></p> 
 
@@ -7,7 +7,6 @@ Código de tipo **ETL** _*(Extract, Transform, Load)*_ desarrollados en **R** pa
 - **Developer:** Mgs. Marcelo Chávez
 - **Fecha de creación de repositorio de versionamiento:** 25 de junio de 2024
 - **Copyright 2024:** Derechos Reservados por el autor
-<<<<<<< HEAD
 - **Disclaimer:** Se prohíbe la reproducción total, parcial o plagio de cualquier elemento o bloque de código publicado en este repositorio digital
 
 ## Documentación de Soporte y Uso de herramientas digitales - README.md
@@ -29,10 +28,6 @@ Esta es una plantilla basada en los estándares de la Guía de publicación de h
 - [Licencia](#licencia)
 - [Limitación de responsabilidades - Solo BID](#limitación-de-responsabilidades)
 
-## Badges o escudos
-
-Es común en muchos repositorios open source el uso de badges o escudos para dar visibilidad el uso de microservicios, licencias, descargas, etc. Recomendamos revisar la iniciativa [shields.io](https://shields.io/) donde según consideres necesario podrás generar badges para tu repo.
-
 ### Ecosistema de **R**
 
 - ![R](https://img.shields.io/badge/Made_with-R-1f425f.svg)
@@ -53,8 +48,3 @@ Para usar esta herramienta digital, sigue los siguientes pasos:
    ```sh
    git clone https://github.com/tu-usuario/MDMQ_DWA.git
    ```
-**Disclaimer:** Se prohibe la reproducción total o parcial de cualquier elemento o bloque de código publicado en este repositorio
-
-=======
-- **Disclaimer:** Se prohibe la reproducción total o parcial de cualquier elemento o bloque de código publicado en este repositorio
->>>>>>> 063b99822a099cdae0d2d42c3531a6b633d54d2a
