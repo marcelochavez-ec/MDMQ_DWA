@@ -11,7 +11,7 @@ con_postgres <- dbConnect(RPostgres::Postgres(),
                           password = "marce")
 
 
-db_pib <- readxl::read_excel("D:/MDMQ/BDD/DEUDA_PUBLICA_MEF_vs_2/BDD_DEUDA_PUBLICA_2011_2024.xlsx",
+db_pib <- readxl::read_excel("DB/DEUDA_PUBLICA_MEF/BDD_DEUDA_PUBLICA_2011_2024_vs_2.xlsx",
                           sheet = "COPY")
 
 db_pib$id_pib <- seq_len(nrow(db_pib))
@@ -40,14 +40,16 @@ field_types <- c(
   'deuda_total'="numeric",
   'deuda_total_pib'="numeric")
 
-dbWriteTable(
-    con_postgres,
-    name = DBI::Id(schema = "c_economico",
-                   table = "db_pib"),
-    value = db_pib,
-    overwrite = TRUE,
-    row.names = FALSE,
-    field.types = field_types)
+write_parquet(db_pib, "DB/PIB/db_pib.parquet")
 
-print(dbDisconnect(con_postgres))
+# dbWriteTable(
+#     con_postgres,
+#     name = DBI::Id(schema = "c_economico",
+#                    table = "db_pib"),
+#     value = db_pib,
+#     overwrite = TRUE,
+#     row.names = FALSE,
+#     field.types = field_types)
+# 
+# print(dbDisconnect(con_postgres))
 
