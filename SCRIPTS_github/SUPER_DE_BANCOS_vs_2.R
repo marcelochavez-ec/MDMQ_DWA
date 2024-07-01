@@ -44,21 +44,19 @@ df_sb <- df_sb %>%
          TRIMESTRE_ANIO = paste(TRIMESTRE, ANIO, sep = "-")) %>%
   select(-V30, -MES, -TRIMESTRE)
 
-# Creación de reportes
-reporte_anual <- df_sb %>%
-  group_by(ANIO) %>%
+# Creación de reportes anual y trimestral en un solo bloque
+reportes <- df_sb %>%
+  group_by(ANIO, TRIMESTRE_ANIO) %>%
   summarise(
-    TOTAL_QUITO = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "EXTRANJERA DIRECTA" & CANTON == "QUITO"], na.rm = TRUE),
-    TOTAL_NACIONAL = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "NACIONAL"], na.rm = TRUE)
-  )
+    TOTAL_QUITO_ANUAL = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "EXTRANJERA DIRECTA" & CANTON == "QUITO"], na.rm = TRUE),
+    TOTAL_NACIONAL_ANUAL = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "NACIONAL"], na.rm = TRUE),
+    TOTAL_QUITO_TRIMESTRAL = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "EXTRANJERA DIRECTA" & CANTON == "QUITO"], na.rm = TRUE),
+    TOTAL_NACIONAL_TRIMESTRAL = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "NACIONAL"], na.rm = TRUE)
+  ) %>%
+  filter(!is.na(TRIMESTRE_ANIO)) # Filtrar para evitar filas nulas
 
-reporte_trimestral <- df_sb %>%
-  group_by(TRIMESTRE_ANIO) %>%
-  summarise(
-    TOTAL_QUITO = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "EXTRANJERA DIRECTA" & CANTON == "QUITO"], na.rm = TRUE),
-    TOTAL_NACIONAL = sum(CAPITAL_POR_ACTO_JURIDICO[TIPO_INVERSION == "NACIONAL"], na.rm = TRUE)
-  )
-
-# Guardar los reportes en archivos Excel
-write.xlsx(list("Reporte_Anual" = reporte_anual, "Reporte_Trimestral" = reporte_trimestral), 
-           "REPORTES_onedrive/REPORTE_UNIFICADO.xlsx")
+# Separación de reporte anual y trimestral
+reporte_anual <- reportes %>%
+  filter(!grepl("Q[1-4]", TRIMESTRE_ANIO)) %>%
+  select(ANIO, TOTAL_QUITO_ANUAL, TOTAL_NACIONAL_ANUAL) %>%
+  formato contiene J tra formato ? degli
