@@ -1,0 +1,12 @@
+name: SIDEP
+title: SIDEP
+username: marcelo-chavez
+account: marcelo-chavez
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12302380
+bundleId: 8848830
+url: https://marcelo-chavez.shinyapps.io/SIDEP/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
