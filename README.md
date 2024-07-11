@@ -26,7 +26,6 @@ Esta es una plantilla basada en los estándares de la Guía de publicación de h
 - [Autor](#autores)
 - [Información adicional](#información-adicional)
 - [Licencia](#licencia)
-- [Limitación de responsabilidades - Solo BID](#limitación-de-responsabilidades)
 
 ### Ecosistema de **R**
 
